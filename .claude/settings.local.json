@@ -1,0 +1,24 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npm install *)",
+      "mcp__Claude_Preview__preview_start",
+      "Bash([ -s \"$HOME/.nvm/nvm.sh\" ])",
+      "Read(//Users/bkidd/.nvm/versions/**)",
+      "Read(//Users/bkidd/.volta/**)",
+      "Read(//Users/bkidd/.bun/**)",
+      "Read(//Users/bkidd/**)",
+      "Bash(command -v brew)",
+      "Bash(export PATH=\"/usr/local/bin:/opt/homebrew/bin:$PATH\")",
+      "Bash(npm --version)",
+      "Bash(find /var/folders/*/T/claude-503/ -type f)",
+      "Bash(sips -g pixelWidth -g pixelHeight hero.jpg)",
+      "Bash(find . -type f '\\(' -name '*.tsx' -o -name '*.ts' -o -name '*.css' '\\)' -exec sed -i '' -e 's/#0F766E/#6B8073/g' -e 's/#0D9488/#8FA495/g' -e 's/#F0FDF4/#F2EEE5/g' -e 's/#CCFBF1/#D9E2DB/g' '{}' ';')",
+      "Bash(find . -type f '\\(' -name '*.tsx' -o -name '*.ts' -o -name '*.css' '\\)' -exec sed -i '' -e 's/#6B8073/#0F766E/g' -e 's/#8FA495/#0D9488/g' -e 's/#F2EEE5/#F0FDF4/g' -e 's/#D9E2DB/#CCFBF1/g' '{}' ';')",
+      "Bash(python3 -c ' *)",
+      "Bash(find . -type f \\\\\\( -name \"*.tsx\" -o -name \"*.ts\" -o -name \"*.css\" \\\\\\) -exec sed -i '' 's/#F0FDF4/#EBF1F0/g' {} \\\\;)",
+      "Bash(lsof -nP -iTCP:3000 -sTCP:LISTEN)",
+      "Bash(curl -sS -o /dev/null -w \"%{http_code}\\\\n\" --max-time 3 http://localhost:3000/about)"
+    ]
+  }
+}
