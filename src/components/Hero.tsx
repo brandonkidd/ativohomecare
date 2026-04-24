@@ -5,12 +5,12 @@ export default function Hero() {
   return (
     <section className="relative min-h-[82vh] lg:min-h-[86vh] flex items-center overflow-hidden">
       <Image
-        src="/hero-updated.jpg"
+        src="/hero-home-preferred-highres.jpg"
         alt="Ativo caregiver sharing a warm moment with a senior client in a sunlit garden"
         fill
         priority
         sizes="100vw"
-        quality={95}
+        quality={100}
         className="object-cover object-[72%_center]"
       />
 
@@ -46,6 +46,7 @@ export default function Hero() {
 
             {/* Visual headline */}
             <h2
+              data-home-care-anchor
               className="text-6xl sm:text-7xl lg:text-8xl text-white font-medium leading-[1.04] mb-5 animate-fade-in-up animation-delay-100"
               style={{ fontFamily: 'var(--font-serif)' }}
             >
@@ -67,7 +68,7 @@ export default function Hero() {
                 className="group inline-flex w-full sm:w-auto items-center justify-between sm:justify-start gap-3 sm:gap-4 rounded-full bg-white pl-5 sm:pl-6 pr-2 py-2 text-[#0E1B1B] font-medium text-[1.02rem] sm:text-base shadow-xl shadow-black/20 hover:bg-[#2F6E6B] hover:text-white active:bg-[#2F6E6B] active:text-white transition-all"
               >
                 <span>Schedule a Call</span>
-                <span className="flex h-11 w-11 items-center justify-center rounded-full bg-[#0E1B1B] text-white transition-transform group-hover:translate-x-0.5 group-hover:bg-white group-hover:text-[#0E1B1B] group-active:bg-white group-active:text-[#0E1B1B]">
+                <span className="flex h-11 w-11 items-center justify-center rounded-full bg-[#0E3B3A] text-white transition-transform group-hover:translate-x-0.5 group-hover:bg-white group-hover:text-[#0E1B1B] group-active:bg-white group-active:text-[#0E1B1B]">
                   <svg
                     className="w-4 h-4"
                     fill="none"

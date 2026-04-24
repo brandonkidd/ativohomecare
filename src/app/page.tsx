@@ -2,8 +2,8 @@ import Link from 'next/link';
 import Hero from '@/components/Hero';
 import ProofBar from '@/components/ProofBar';
 import ServiceCard from '@/components/ServiceCard';
-import HowItWorks from '@/components/HowItWorks';
 import TestimonialCarousel from '@/components/TestimonialCarousel';
+import HomeLeadIn from '@/components/HomeLeadIn';
 import CTASection from '@/components/CTASection';
 import CheckItem from '@/components/CheckItem';
 import ScrollReveal from '@/components/ScrollReveal';
@@ -85,8 +85,12 @@ export default function Home() {
       <Hero />
       <ProofBar />
 
-      {/* Services Section */}
-      <section className="bg-[#F1EEE7] py-20 lg:py-28">
+      {/* How: services grid */}
+      <section
+        id="home-services"
+        data-home-services-section
+        className="bg-[#F1EEE7] py-20 lg:py-28"
+      >
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <ScrollReveal>
             <div className="text-center mb-16">
@@ -119,27 +123,88 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Benefits Band */}
-      <section className="bg-white py-12 lg:py-14 border-y border-[#E6E1D3]">
+      {/* Founder message (archived “why” copy: @/lib/archivedHomeWhyBandCopy) */}
+      <ScrollReveal>
+        <HomeLeadIn />
+      </ScrollReveal>
+
+      {/* Cost & clarity band — archived copy: @/lib/archivedHomeCostHurdleCopy */}
+
+      {/* What to expect (quick proof points) */}
+      <section
+        className="bg-white py-16 lg:py-20 border-y border-[#E6E1D3]"
+        aria-labelledby="home-what-to-expect"
+      >
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
-          <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-5">
-            {benefitBand.map((item, i) => (
-              <ScrollReveal key={item.title} delay={i * 60}>
-                <div className="surface-soft rounded-2xl border border-[#E6E1D3] px-5 py-5 h-full">
-                  <div className="w-10 h-10 rounded-full bg-[#0E3B3A]/10 text-[#0E3B3A] flex items-center justify-center mb-4">
-                    {item.icon}
-                  </div>
-                  <h3 className="text-lg font-semibold text-[#0E1B1B] mb-1.5">{item.title}</h3>
-                  <p className="text-[#2F6E6B] text-base leading-relaxed">{item.description}</p>
-                </div>
-              </ScrollReveal>
-            ))}
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-start">
+            <ScrollReveal className="lg:col-span-4">
+              <p className="text-xs tracking-[0.25em] uppercase text-[#0E3B3A] font-medium mb-4">
+                What to expect
+              </p>
+              <h2
+                id="home-what-to-expect"
+                className="text-3xl sm:text-4xl font-medium text-[#0E1B1B] leading-[1.08] mb-4"
+                style={{ fontFamily: 'var(--font-serif)' }}
+              >
+                A few things families <em>feel</em> right away
+              </h2>
+              <p className="text-[#2F6E6B] leading-relaxed">
+                This is the quick version of how we operate: fast setup, a local team, the right
+                match, and flexibility that fits real life. If you want the full story, it lives in
+                our approach.
+              </p>
+              <div className="mt-6 flex flex-col sm:flex-row sm:items-center gap-3 sm:gap-5">
+                <Link
+                  href="/how-it-works"
+                  className="inline-flex items-center gap-2 text-[#0E3B3A] font-medium hover:gap-3 transition-all"
+                >
+                  See how it works
+                  <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" aria-hidden>
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
+                  </svg>
+                </Link>
+                <span className="hidden sm:block h-4 w-px bg-[#D9D4C8]" aria-hidden />
+                <Link
+                  href="/the-ativo-difference"
+                  className="inline-flex items-center gap-2 text-[#2F6E6B] font-medium hover:text-[#0E3B3A] transition-colors"
+                >
+                  Why we are different
+                </Link>
+              </div>
+            </ScrollReveal>
+
+            <div className="lg:col-span-8">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
+                {benefitBand.map((item, i) => (
+                  <ScrollReveal key={item.title} delay={i * 60}>
+                    <div className="group h-full rounded-2xl border border-[#E6E1D3] bg-white p-5 sm:p-6 shadow-[0_10px_30px_-24px_rgba(0,29,31,0.55)] transition-shadow duration-300 hover:shadow-[0_18px_44px_-30px_rgba(0,29,31,0.35)]">
+                      <div className="flex items-start gap-4">
+                        <div className="shrink-0 w-11 h-11 rounded-full bg-[#E6E1D3] text-[#0E3B3A] flex items-center justify-center ring-1 ring-black/5">
+                          {item.icon}
+                        </div>
+                        <div>
+                          <h3
+                            className="text-lg sm:text-xl font-medium text-[#0E1B1B] mb-1.5"
+                            style={{ fontFamily: 'var(--font-serif)' }}
+                          >
+                            {item.title}
+                          </h3>
+                          <p className="text-[#2F6E6B] text-sm sm:text-base leading-relaxed">
+                            {item.description}
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                  </ScrollReveal>
+                ))}
+              </div>
+            </div>
           </div>
         </div>
       </section>
 
-      {/* The Ativo Difference - Split Layout with Checkmarks */}
-      <section className="bg-gradient-to-b from-[#B9D4CF] via-[#D1DFDA] to-[#E6E1D3] py-20 lg:py-28">
+      {/* The Ativo Difference - Split Layout with Checkmarks (stops at border; no gradient on booking/phone block below) */}
+      <section className="border-b border-[#B9B4A8]/45 bg-gradient-to-b from-[#B9D4CF] via-[#D1DFDA] to-[#E6E1D3] py-20 lg:py-28">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-stretch">
             <ScrollReveal className="lg:col-span-5">
@@ -208,30 +273,8 @@ export default function Home() {
         </div>
       </section>
 
-      {/* How It Works */}
-      <section className="bg-[#F1EEE7] py-20 lg:py-28">
-        <div className="mx-auto max-w-7xl px-6 lg:px-8">
-          <ScrollReveal>
-            <div className="text-center mb-16">
-              <p className="text-xs tracking-[0.25em] uppercase text-[#0E3B3A] font-medium mb-4">
-                Getting Started
-              </p>
-              <h2
-                className="text-4xl sm:text-5xl lg:text-6xl font-medium text-[#0E1B1B]"
-                style={{ fontFamily: 'var(--font-serif)' }}
-              >
-                Five Simple <em>Steps</em>
-              </h2>
-            </div>
-          </ScrollReveal>
-          <div className="max-w-2xl mx-auto">
-            <HowItWorks compact />
-          </div>
-        </div>
-      </section>
-
-      {/* Booking Experience */}
-      <section className="bg-[#E6E1D3] py-20 lg:py-24">
+      {/* Booking Experience — solid field so the phone (screen has its own gradient) isn’t on the same mesh as “Why Ativo” */}
+      <section className="bg-[#F1EEE7] py-20 lg:py-24">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-14 lg:gap-20 items-center">
             <ScrollReveal>
@@ -332,7 +375,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Testimonials */}
       <TestimonialCarousel />
 
       {/* FAQ */}

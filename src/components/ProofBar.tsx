@@ -133,7 +133,7 @@ export default function ProofBar() {
   }, [hasAnimated]);
 
   return (
-    <section ref={sectionRef} className="bg-[#F1EEE7] py-6 lg:py-8">
+    <section ref={sectionRef} data-home-proof-section className="bg-[#F1EEE7] py-6 lg:py-8">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col lg:flex-row items-center justify-center gap-4 lg:gap-7 text-[#0E3B3A]">
             <div className="relative -top-12 sm:-top-14 lg:-top-16 mb-[-2.75rem] sm:mb-[-3.25rem] lg:mb-[-3.5rem] flex -space-x-7 sm:-space-x-9 shrink-0 lg:-ml-10">
