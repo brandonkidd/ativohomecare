@@ -59,13 +59,14 @@ export default function HomeLeadIn() {
         </p>
 
         <blockquote
-          className="mx-auto mt-6 max-w-5xl text-center"
+          className="mx-auto mt-6 max-w-6xl text-center"
           style={{ fontFamily: 'var(--font-serif)' }}
         >
-          <p className="text-[1.25rem] font-medium leading-[1.2] text-white sm:text-2xl sm:leading-tight md:text-3xl md:leading-tight lg:text-4xl lg:leading-[1.1] xl:text-5xl xl:leading-[1.08]">
+          <p className="text-balance text-[1.25rem] font-medium leading-[1.2] text-white sm:text-2xl sm:leading-tight md:text-3xl md:leading-tight lg:text-4xl lg:leading-[1.1] xl:text-[3.35rem] xl:leading-[1.1]">
             <em>
-              &ldquo;We built Ativo because families deserve better than a clipboard and a stranger. Your
-              parent deserves someone who knows their name, their routine, and their story.&rdquo;
+              &ldquo;The best senior care begins at home, before a crisis, before a facility, before a
+              family reaches a breaking point. That is why we built Ativo Home Care. Families were
+              already trusting us with the next chapter. We wanted to be there for this one too.&rdquo;
             </em>
           </p>
           <footer

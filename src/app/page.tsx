@@ -128,10 +128,10 @@ export default function Home() {
       <ProofBar />
 
       {/* The Ativo Difference */}
-      <section className="bg-[#F1EEE7] py-20 lg:py-24">
+      <section className="bg-white py-20 lg:py-24">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
-          <div className="grid grid-cols-1 items-start gap-8 lg:grid-cols-12 lg:gap-10">
-            <ScrollReveal className="lg:col-span-6">
+          <div className="grid grid-cols-1 items-stretch gap-8 lg:grid-cols-12 lg:gap-10">
+            <ScrollReveal className="lg:col-span-7">
               <p className="mb-4 text-xs font-medium uppercase tracking-[0.25em] text-[#0E3B3A]">
                 The Ativo Difference
               </p>
@@ -144,20 +144,16 @@ export default function Home() {
 
               <div className="mt-7 space-y-5 text-lg leading-relaxed text-[#2F6E6B]">
                 <p>
-                  Every other home care agency in the West Valley is a standalone operation. They
-                  provide caregivers, and that is where their involvement ends.
+                  When you join Ativo Home Care, your family gets immediate access to our Care
+                  Concierge&trade; platform, with weekly updates, visit tracking, medication and diet
+                  monitoring, and a family portal that keeps you informed without having to chase
+                  anyone down. You always know how your parent is doing.
                 </p>
                 <p>
-                  Ativo is different. We are part of a senior living network that includes
-                  communities in Prescott Valley, Buckeye, Yuma, and across the western United
-                  States. Our caregivers are trained to the same standards as the care teams inside
-                  our communities.
-                </p>
-                <p>
-                  That means your family gets more than a caregiver. You get the same systems our
-                  communities rely on: detailed visit tracking, medication and diet monitoring, and a
-                  family portal that keeps you informed after every visit. You are never guessing
-                  about how your parent is doing.
+                  Behind that platform is a team trained to the same standards as the care teams
+                  inside Ativo Senior Living communities in Prescott Valley, Buckeye, Yuma, and across
+                  the western United States. This is not a staffing agency. It is a complete care
+                  system.
                 </p>
                 <p>
                   And if the day comes when your loved one needs more than in-home support,
@@ -172,24 +168,29 @@ export default function Home() {
 
               <Link
                 href="/the-ativo-difference"
-                className="mt-8 inline-flex items-center gap-2 rounded-full bg-[#0E3B3A] px-7 py-3.5 text-white font-medium transition-all hover:bg-[#2F6E6B] hover:gap-3"
+                className="mt-8 inline-flex items-center gap-2 text-[#0E3B3A] font-semibold transition-all hover:gap-3 hover:text-[#2F6E6B]"
               >
-                See the Full Ativo Difference
+                Learn More About Our Approach
                 <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" aria-hidden>
                   <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
                 </svg>
               </Link>
             </ScrollReveal>
 
-            <ScrollReveal delay={120} className="lg:col-span-6">
-              <div className="surface-soft relative mx-auto aspect-[4/5] w-full max-w-xl overflow-hidden rounded-3xl border border-[#E6E1D3]">
-                <Image
-                  src="/hero-home-preferred-highres.jpg"
-                  alt="Ativo caregiver supporting a senior client"
-                  fill
-                  className="object-cover object-center"
-                  sizes="(max-width: 1024px) 100vw, 48vw"
-                />
+            <ScrollReveal delay={120} className="lg:col-span-5">
+              <div className="relative mx-auto h-full min-h-[34rem] w-full max-w-md lg:ml-auto">
+                <div className="absolute -bottom-4 -left-4 h-[74%] w-[74%] rounded-md bg-[#0E3B3A]" aria-hidden />
+                <div className="surface-soft relative h-full w-full overflow-hidden rounded-md border border-[#E6E1D3]">
+                  <Image
+                    src="/senior-home-care-buckeye.png"
+                    alt="Senior client in Buckeye receiving compassionate home care support"
+                    fill
+                    unoptimized
+                    quality={100}
+                    className="object-cover object-center"
+                    sizes="(max-width: 1024px) 100vw, 34vw"
+                  />
+                </div>
               </div>
             </ScrollReveal>
           </div>

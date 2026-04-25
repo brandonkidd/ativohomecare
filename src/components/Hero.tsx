@@ -60,8 +60,9 @@ export default function Hero() {
             {/* Subheadline */}
             <p className="text-white/85 text-base sm:text-lg max-w-xl mb-8 leading-relaxed animate-fade-in-up animation-delay-200">
               Ativo Home Care provides professional, private-pay companion and personal care services
-              across Arizona. Backed by the same team behind Ativo Senior Living communities, so when
-              needs change, your family already has a partner for the next step.
+              across the West Valley. Backed by the award-winning team behind Ativo Senior Living
+              communities, your family gets the same standard of care that has earned the trust of
+              thousands of families across the western United States.
             </p>
 
             {/* CTA — pill with dark square arrow */}
