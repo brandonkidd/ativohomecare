@@ -11,7 +11,7 @@ export default defineConfig({
   title: 'Ativo Content Studio',
   projectId: projectId || 'missing-project-id',
   dataset: dataset || 'missing-dataset',
-  basePath: '/studio',
+  basePath: '/ahcadmin',
   plugins: [structureTool(), visionTool()],
   schema,
 });
