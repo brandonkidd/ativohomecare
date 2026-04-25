@@ -14,27 +14,42 @@ const homeFaqs: HomeFaqItem[] = [
   {
     question: 'How quickly can care start?',
     answer:
-      'For most situations, we can begin care within 3 to 5 days of your initial consultation. Emergency and urgent situations can often be accommodated within 24 to 48 hours. The timeline depends on caregiver matching and care plan complexity, but we move fast because we know families usually call when they need help now, not next month.',
+      "In most cases, we can have a caregiver in the home within 48 to 72 hours of your initial consultation. Because Ativo is 100% private pay, there are no insurance authorizations or prior approvals to wait on. We start by understanding your loved one's needs, matching them with a caregiver, and scheduling an introduction visit before care begins.",
   },
   {
-    question: 'Do you require long-term contracts?',
+    question: 'How much does in-home care cost in Arizona?',
     answer:
-      'No. We never require long-term contracts. Care continues as long as your family needs it and stops when you say so. We believe that if we are doing a good job, you will stay because you want to, not because a contract says you have to. Most of our client relationships last years, by choice.',
+      "In-home care costs in Arizona typically range from $29 to $36 per hour depending on location, service level, and hours needed. As a reference point, 20 hours per week of in-home care at the statewide median rate costs roughly $2,640 to $2,880 per month. That is significantly less than the Arizona median for assisted living ($5,500 per month) or a nursing home ($6,540 per month). Ativo provides transparent, all-inclusive pricing with no hidden fees. Contact us for a personalized quote based on your family's specific needs and location.",
   },
   {
-    question: 'How do you match caregivers to clients?',
+    question: 'Is in-home care cheaper than assisted living in Arizona?',
     answer:
-      'We match based on personality, interests, energy level, skills, and schedule compatibility. During your consultation, we learn about your loved one as a person, not just a patient. Then we select a caregiver who genuinely fits. If the match is not right, we replace the caregiver immediately at no cost.',
-  },
-  {
-    question: 'What areas do you serve?',
-    answer:
-      'We serve Buckeye, Goodyear, Surprise, Avondale, and surrounding West Valley communities. We have deep relationships with 55+ communities including Sun City Festival, PebbleCreek, Victory at Verrado, Sundance, CantaMia, and Arizona Traditions. If you are unsure whether we cover your area, call us.',
+      "For part-time care needs, yes. If your loved one needs fewer than 30 to 35 hours of care per week, in-home care is almost always less expensive than assisted living. At the Arizona median home care rate of approximately $33 per hour, 20 hours per week costs roughly $2,640 per month, compared to $5,500 per month for assisted living or $6,540 for a nursing home. However, if your loved one requires 24/7 supervision, a facility may be more cost-effective. The right choice depends on the level of care needed and your family's priorities around independence, comfort, and routine.",
   },
   {
     question: 'Do you accept insurance or Medicare?',
     answer:
-      'We are a private pay service, which means no insurance billing, no Medicare paperwork, and no prior authorizations delaying your care. You pay directly for exactly the services you use. This keeps things simple, transparent, and fast. Many families use long-term care insurance to offset costs, and we can help you navigate that process.',
+      "Ativo Home Care is 100% private pay. We do not bill insurance companies or Medicare directly. This means care starts when you need it, not when an insurance company approves it, and you choose the hours, schedule, and services without restrictions. If your family has long-term care insurance (LTC), we assist with the claims paperwork so you can maximize your benefits and receive reimbursement directly from your insurer.",
+  },
+  {
+    question: 'How do you match caregivers to clients?',
+    answer:
+      "We go beyond availability and credentials. During the intake process, we assess personality traits, communication style, interests, energy level, and scheduling preferences for both the client and the caregiver. Your loved one meets the caregiver before care begins in a low-pressure introduction with family present. If the match does not feel right for any reason, we replace the caregiver immediately at no cost. We maintain a small, dedicated team for each client so your loved one always sees a familiar face.",
+  },
+  {
+    question: 'Are your caregivers background checked and insured?',
+    answer:
+      'Yes. Every Ativo caregiver undergoes a comprehensive background check, reference verification, and skills assessment before being placed with a client. All caregivers are bonded and insured through Ativo, which means your family carries no liability. Arizona does not require state licensing for non-medical home care agencies, which makes it especially important to choose a provider with rigorous screening standards. We maintain the same hiring and training standards used across Ativo Senior Living communities.',
+  },
+  {
+    question: 'What makes Ativo different from other home care agencies?',
+    answer:
+      'Ativo Home Care is the only home care agency in its markets that is built into a senior living network. While other agencies provide caregivers and stop there, Ativo is connected to Ativo Senior Living communities across the western United States. This means our caregivers are trained to the same standards as community care teams, your family gets access to detailed visit tracking and a family portal with weekly updates, and if your loved one eventually needs a higher level of care, everything transfers. Care notes, routines, preferences, and medication history all carry forward. No starting over.',
+  },
+  {
+    question: "What happens if my parent's needs change over time?",
+    answer:
+      "Care plans are designed to evolve. If your loved one needs more hours, different services, or a higher level of support, we adjust the plan with a simple conversation. Unlike standalone home care agencies, Ativo is part of the Ativo Senior Living network. If the day comes when in-home care is no longer enough, your family already has a relationship with the team that will help navigate the transition to a community setting. Care notes, routines, preferences, and medication history all transfer directly. No starting over, no explaining your parent's story to a new team for the third time.",
   },
 ];
 
@@ -84,7 +99,7 @@ const marketCards = [
   },
   {
     name: 'Buckeye',
-    cities: 'Buckeye, Goodyear, Litchfield Park, Avondale, Surprise',
+    cities: 'Buckeye, Goodyear, Surprise, Sun City West, Peoria',
   },
   {
     name: 'Yuma',
@@ -376,8 +391,8 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Communities We Serve */}
-      <section className="bg-[#F1EEE7] py-16 lg:py-20 border-y border-[#E6E1D3]">
+      {/* Serving communities across Arizona */}
+      <section className="bg-white py-16 lg:py-20 border-y border-[#E6E1D3]">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <ScrollReveal>
             <div className="mb-10 text-center lg:mb-12">
@@ -425,17 +440,18 @@ export default function Home() {
           preload="metadata"
           aria-hidden
         >
-          <source src="/insight-living-testimonial-bg.MOV" type="video/quicktime" />
+          <source src="/quote-bg-2.MOV?v=3" />
+          <source src="/quote-bg-1.MOV?v=3" />
         </video>
-        <div className="pointer-events-none absolute inset-0 bg-gradient-to-b from-[#B9D4CF]/72 via-[#D1DFDA]/74 to-[#E6E1D3]/78" aria-hidden />
+        <div className="pointer-events-none absolute inset-0 bg-black/72" aria-hidden />
 
         <div className="relative z-10 mx-auto max-w-5xl px-6 text-center lg:px-8">
           <ScrollReveal>
-            <p className="mb-6 text-xs font-medium uppercase tracking-[0.25em] text-[#0E3B3A]">
+            <p className="mb-6 text-xs font-medium uppercase tracking-[0.25em] text-white/85">
               What families say
             </p>
             <blockquote
-              className="mx-auto max-w-4xl text-[2rem] leading-[1.25] text-[#0E1B1B] sm:text-[2.2rem] lg:text-[2.45rem]"
+              className="mx-auto max-w-4xl text-[2rem] leading-[1.25] text-white sm:text-[2.2rem] lg:text-[2.45rem]"
               style={{ fontFamily: 'var(--font-serif)' }}
             >
               <em>
@@ -444,7 +460,7 @@ export default function Home() {
                 2am.&rdquo;
               </em>
             </blockquote>
-            <p className="mt-8 text-sm font-medium text-[#2F6E6B] sm:text-base">Sarah M., Prescott Valley, AZ</p>
+            <p className="mt-8 text-sm font-medium text-white/85 sm:text-base">Sarah M., Prescott Valley, AZ</p>
           </ScrollReveal>
         </div>
       </section>
@@ -505,43 +521,6 @@ export default function Home() {
               hours per week. Actual rates vary by service level, location, and hours. Contact Ativo
               for a personalized quote.
             </p>
-          </ScrollReveal>
-        </div>
-      </section>
-
-      {/* Communities We Serve */}
-      <section className="bg-white py-20 lg:py-28">
-        <div className="mx-auto max-w-7xl px-6 lg:px-8">
-          <ScrollReveal>
-            <div className="text-center mb-6">
-              <p className="text-xs tracking-[0.25em] uppercase text-[#0E3B3A] font-medium mb-4">
-                Our Neighbors
-              </p>
-              <h2
-                className="text-4xl sm:text-5xl lg:text-6xl font-medium text-[#0E1B1B]"
-                style={{ fontFamily: 'var(--font-serif)' }}
-              >
-                Communities We <em>Serve</em>
-              </h2>
-              <p className="mt-4 text-[#2F6E6B] max-w-xl mx-auto">
-                We have deep relationships with the 55+ communities across the
-                West Valley. Chances are, we are already serving your neighbors.
-              </p>
-            </div>
-          </ScrollReveal>
-
-          <ScrollReveal delay={150}>
-            <div className="text-center mt-10">
-              <Link
-                href="/locations"
-                className="inline-flex items-center gap-2 text-[#0E3B3A] font-medium hover:gap-3 transition-all"
-              >
-                View all service areas
-                <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
-                </svg>
-              </Link>
-            </div>
           </ScrollReveal>
         </div>
       </section>
