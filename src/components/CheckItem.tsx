@@ -1,11 +1,26 @@
 export default function CheckItem({
   children,
   size = 'default',
+  variant = 'check',
 }: {
   children: React.ReactNode;
   size?: 'default' | 'sm';
+  /** `bullet` = minimal dot; `check` = default circular checkmark */
+  variant?: 'check' | 'bullet';
 }) {
   const compact = size === 'sm';
+
+  if (variant === 'bullet') {
+    return (
+      <div className="flex gap-2.5 items-start">
+        <span
+          className="mt-2.5 h-1 w-1 shrink-0 rounded-full bg-[#0E3B3A]"
+          aria-hidden
+        />
+        <div className="text-[#2F6E6B] leading-relaxed">{children}</div>
+      </div>
+    );
+  }
 
   return (
     <div className="flex gap-4 items-start">

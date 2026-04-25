@@ -22,7 +22,7 @@ export default function FAQAccordion({ items, id, level = 0 }: FAQAccordionProps
       {items.map((item, i) => (
         <div
           key={i}
-          className="surface-soft border border-[#E6E1D3] rounded-xl overflow-hidden"
+          className="group overflow-hidden rounded-xl border border-[#E6E1D3] bg-white/90 shadow-[0_8px_24px_-20px_rgba(0,29,31,0.45)] backdrop-blur-[2px] transition-colors duration-300 hover:bg-[#0E3B3A] hover:border-[#0E3B3A] focus-within:bg-[#0E3B3A] focus-within:border-[#0E3B3A]"
         >
           <button
             onClick={() => setOpenIndex(openIndex === i ? null : i)}
@@ -31,14 +31,14 @@ export default function FAQAccordion({ items, id, level = 0 }: FAQAccordionProps
             }`}
           >
             <span
-              className={`font-medium text-[#0E1B1B] pr-4 ${
+              className={`pr-4 font-medium text-[#0E1B1B] transition-colors group-hover:text-white group-focus-within:text-white ${
                 level === 0 ? 'text-base' : 'text-sm'
               }`}
             >
               {item.question}
             </span>
             <svg
-              className={`w-5 h-5 text-[#2F6E6B] shrink-0 transition-transform duration-300 ${
+              className={`h-5 w-5 shrink-0 text-[#2F6E6B] transition-transform duration-300 group-hover:text-[#B6D5EA] group-focus-within:text-[#B6D5EA] ${
                 openIndex === i ? 'rotate-180' : ''
               }`}
               fill="none"

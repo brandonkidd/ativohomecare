@@ -171,25 +171,31 @@ export default function AtivoDifferencePage() {
             </p>
           </ScrollReveal>
 
-          <div className="relative border-l border-[#E6E1D3] pl-10 sm:pl-12 space-y-10">
+          <div className="space-y-12 sm:space-y-14">
             {differentiators.map((diff, i) => (
               <ScrollReveal key={diff.title} delay={100 + i * 60}>
-                <article className="surface-soft relative rounded-2xl border border-[#E6E1D3]/80 p-6 sm:p-8">
-                  <span className="absolute -left-[3.05rem] top-8 flex h-10 w-10 items-center justify-center rounded-full bg-[#0E3B3A] text-white text-base font-semibold">
+                <article className="relative">
+                  <span
+                    className="pointer-events-none absolute left-0 top-0 z-20 -translate-x-[122%] -translate-y-[24%] whitespace-nowrap [writing-mode:horizontal-tb] rotate-0 text-[7.25rem] font-medium leading-[0.7] text-[#0E3B3A] sm:text-[9rem] lg:text-[10.5rem] tabular-nums"
+                    style={{ fontFamily: 'var(--font-serif)' }}
+                    aria-hidden
+                  >
                     {i + 1}
                   </span>
-                  <h3
-                    className="text-2xl font-medium text-[#0E1B1B] mb-4"
-                    style={{ fontFamily: 'var(--font-serif)' }}
-                  >
-                    {diff.title}
-                  </h3>
-                  <div className="space-y-4">
-                    {diff.details.map((detail, j) => (
-                      <CheckItem key={j} size="sm">
-                        {detail}
-                      </CheckItem>
-                    ))}
+                  <div className="surface-soft relative z-10 rounded-2xl border border-[#E6E1D3]/80 p-6 sm:p-8">
+                    <h3
+                      className="text-2xl font-medium text-[#0E1B1B] mb-4"
+                      style={{ fontFamily: 'var(--font-serif)' }}
+                    >
+                      {diff.title}
+                    </h3>
+                    <div className="space-y-4">
+                      {diff.details.map((detail, j) => (
+                        <CheckItem key={j} size="sm" variant="bullet">
+                          {detail}
+                        </CheckItem>
+                      ))}
+                    </div>
                   </div>
                 </article>
               </ScrollReveal>
