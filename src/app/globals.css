@@ -80,6 +80,15 @@ body::before {
     0 4px 10px -8px rgba(14, 27, 27, 0.22);
 }
 
+/* Global radius tuning: less rounded, more square-ish surfaces */
+[class*="rounded-3xl"] { border-radius: 0.6rem !important; }
+[class*="rounded-2xl"] { border-radius: 0.5rem !important; }
+[class*="rounded-xl"] { border-radius: 0.4rem !important; }
+[class*="rounded-lg"] { border-radius: 0.35rem !important; }
+[class*="rounded-md"] { border-radius: 0.3rem !important; }
+[class*="rounded-sm"] { border-radius: 0.25rem !important; }
+[class*="rounded-full"] { border-radius: 9999px !important; }
+
 h1, h2, h3, h4 {
   font-family: var(--font-serif);
 }

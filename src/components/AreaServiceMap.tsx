@@ -114,22 +114,6 @@ export default function AreaServiceMap() {
 
   return (
     <div>
-      <div className="mx-auto max-w-4xl text-center mb-10">
-        <p className="text-xs tracking-[0.28em] uppercase text-[#0E3B3A] font-medium mb-3">
-          Our Expanding Service Footprint
-        </p>
-        <h3
-          className="text-4xl sm:text-5xl font-medium text-[#0E1B1B] mb-3"
-          style={{ fontFamily: 'var(--font-serif)' }}
-        >
-          Our Expanding Service Footprint
-        </h3>
-        <p className="text-[#2F6E6B] leading-relaxed">
-          Discover curated 55+ communities and exceptional living options across
-          our dedicated Service Zones. Hover or tap to explore.
-        </p>
-      </div>
-
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-8">
         <div className="surface-soft rounded-3xl border border-[#E6E1D3] p-4 sm:p-5 lg:col-span-8">
           <div className="relative aspect-[16/11] rounded-2xl bg-[#ECE6DC] border border-[#DAD2C5] overflow-hidden">

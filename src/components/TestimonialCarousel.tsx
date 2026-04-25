@@ -9,27 +9,15 @@ export default function TestimonialCarousel() {
   const [active, setActive] = useState(0);
 
   return (
-    <section className="relative overflow-hidden bg-[#0E1B1B] py-20 lg:py-28">
-      <video
-        className="pointer-events-none absolute inset-0 h-full w-full object-cover"
-        autoPlay
-        muted
-        loop
-        playsInline
-        aria-hidden
-      >
-        <source src="/insight-living-testimonial-bg.MOV" type="video/quicktime" />
-      </video>
-      <div className="pointer-events-none absolute inset-0 bg-[#0E1B1B]/55" aria-hidden />
-
-      <div className="relative z-10 mx-auto max-w-7xl px-6 lg:px-8">
+    <section className="bg-gradient-to-b from-[#B9D4CF] via-[#D1DFDA] to-[#E6E1D3] py-20 lg:py-28">
+      <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <ScrollReveal>
           <div className="text-center mb-16">
-            <p className="text-xs tracking-[0.25em] uppercase text-[#B9D4CF] font-medium mb-4">
+            <p className="text-xs tracking-[0.25em] uppercase text-[#0E3B3A] font-medium mb-4">
               Testimonials
             </p>
             <h2
-              className="text-4xl sm:text-5xl lg:text-6xl font-medium text-white"
+              className="text-4xl sm:text-5xl lg:text-6xl font-medium text-[#0E1B1B]"
               style={{ fontFamily: 'var(--font-serif)' }}
             >
               What Families Are <em>Saying</em>

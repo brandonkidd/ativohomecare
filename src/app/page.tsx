@@ -1,13 +1,12 @@
 import Link from 'next/link';
+import Image from 'next/image';
 import Hero from '@/components/Hero';
 import ProofBar from '@/components/ProofBar';
 import ServiceCard from '@/components/ServiceCard';
 import TestimonialCarousel from '@/components/TestimonialCarousel';
 import HomeLeadIn from '@/components/HomeLeadIn';
 import CTASection from '@/components/CTASection';
-import CheckItem from '@/components/CheckItem';
 import ScrollReveal from '@/components/ScrollReveal';
-import AreaServiceMap from '@/components/AreaServiceMap';
 import HomeFAQList, { type HomeFaqItem } from '@/components/HomeFAQList';
 import { services } from '@/lib/services';
 
@@ -128,10 +127,10 @@ export default function Home() {
       <Hero />
       <ProofBar />
 
-      {/* The Ativo Difference (top split section) */}
+      {/* The Ativo Difference */}
       <section className="bg-[#F1EEE7] py-20 lg:py-24">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
-          <div className="grid grid-cols-1 items-start gap-10 lg:grid-cols-12 lg:gap-12">
+          <div className="grid grid-cols-1 items-start gap-8 lg:grid-cols-12 lg:gap-10">
             <ScrollReveal className="lg:col-span-6">
               <p className="mb-4 text-xs font-medium uppercase tracking-[0.25em] text-[#0E3B3A]">
                 The Ativo Difference
@@ -156,8 +155,8 @@ export default function Home() {
                 </p>
                 <p>
                   That means your family gets more than a caregiver. You get the same systems our
-                  communities rely on: detailed visit tracking, medication and diet monitoring, and
-                  a family portal that keeps you informed with weekly updates. You are never guessing
+                  communities rely on: detailed visit tracking, medication and diet monitoring, and a
+                  family portal that keeps you informed after every visit. You are never guessing
                   about how your parent is doing.
                 </p>
                 <p>
@@ -173,9 +172,9 @@ export default function Home() {
 
               <Link
                 href="/the-ativo-difference"
-                className="mt-8 inline-flex items-center gap-2 font-medium text-[#0E3B3A] transition-all hover:gap-3"
+                className="mt-8 inline-flex items-center gap-2 rounded-full bg-[#0E3B3A] px-7 py-3.5 text-white font-medium transition-all hover:bg-[#2F6E6B] hover:gap-3"
               >
-                Learn More About Our Approach
+                See the Full Ativo Difference
                 <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" aria-hidden>
                   <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
                 </svg>
@@ -183,12 +182,14 @@ export default function Home() {
             </ScrollReveal>
 
             <ScrollReveal delay={120} className="lg:col-span-6">
-              <div className="surface-soft flex min-h-[22rem] items-center justify-center rounded-3xl border border-[#E6E1D3] p-8 text-center">
-                <p className="max-w-md text-base italic leading-relaxed text-[#2F6E6B]">
-                  [ FIELD: Image showing the connection between home care and community. Could be an
-                  Ativo community exterior, or a caregiver walking with a resident on an Ativo
-                  campus. ]
-                </p>
+              <div className="surface-soft relative mx-auto aspect-[4/5] w-full max-w-xl overflow-hidden rounded-3xl border border-[#E6E1D3]">
+                <Image
+                  src="/hero-home-preferred-highres.jpg"
+                  alt="Ativo caregiver supporting a senior client"
+                  fill
+                  className="object-cover object-center"
+                  sizes="(max-width: 1024px) 100vw, 48vw"
+                />
               </div>
             </ScrollReveal>
           </div>
@@ -313,76 +314,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* The Ativo Difference - Split Layout with Checkmarks (stops at border; no gradient on booking/phone block below) */}
-      <section className="border-b border-[#B9B4A8]/45 bg-gradient-to-b from-[#B9D4CF] via-[#D1DFDA] to-[#E6E1D3] py-20 lg:py-28">
-        <div className="mx-auto max-w-7xl px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-stretch">
-            <ScrollReveal className="lg:col-span-5">
-              <div className="surface-soft h-full rounded-3xl border border-[#E6E1D3] p-8 lg:p-10 flex flex-col">
-                <p className="text-xs tracking-[0.25em] uppercase text-[#0E3B3A] font-medium mb-6">
-                  Why Ativo
-                </p>
-                <h2
-                  className="text-3xl sm:text-4xl font-medium text-[#0E1B1B] mb-5"
-                  style={{ fontFamily: 'var(--font-serif)' }}
-                >
-                  The Ativo <em>Difference</em>
-                </h2>
-                <p className="text-[#2F6E6B] leading-relaxed mb-6">
-                  We are built for families who want more than task-based care.
-                  We focus on trust, consistency, and relationships that make
-                  each day feel easier at home.
-                </p>
-                <blockquote
-                  className="text-2xl leading-snug text-[#0E3B3A] mt-auto"
-                  style={{ fontFamily: 'var(--font-serif)' }}
-                >
-                  &ldquo;The right caregiver does more than help. They become
-                  part of the rhythm of home.&rdquo;
-                </blockquote>
-              </div>
-            </ScrollReveal>
-
-            {/* Right - Content */}
-            <ScrollReveal delay={150} className="lg:col-span-7">
-              <div className="surface-soft rounded-3xl border border-[#E6E1D3] p-8 lg:p-10 h-full">
-                <div className="space-y-6">
-                  <CheckItem>
-                    <strong className="text-[#0E1B1B]">Connected to Ativo Senior Living.</strong>{' '}
-                    We understand the transition between community and home because we are part of
-                    both worlds. No other home care agency in the West Valley has this connection.
-                  </CheckItem>
-                  <CheckItem>
-                    <strong className="text-[#0E1B1B]">Private Pay Simplicity.</strong>{' '}
-                    No insurance battles, no prior authorizations, no billing surprises. You pay
-                    for exactly what you use, and care starts when you need it.
-                  </CheckItem>
-                  <CheckItem>
-                    <strong className="text-[#0E1B1B]">Caregiver Matching.</strong>{' '}
-                    We match on personality and interests, not just availability. Your loved one
-                    gets someone they actually enjoy spending time with.
-                  </CheckItem>
-                  <CheckItem>
-                    <strong className="text-[#0E1B1B]">No Long-Term Contracts.</strong>{' '}
-                    Use our services for a week or for years. Adjust, pause, or stop anytime.
-                    We earn your loyalty, we do not lock it in.
-                  </CheckItem>
-                </div>
-                <Link
-                  href="/the-ativo-difference"
-                  className="inline-flex items-center gap-2 mt-8 text-[#0E3B3A] font-medium hover:gap-3 transition-all"
-                >
-                  Learn more about our approach
-                  <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
-                  </svg>
-                </Link>
-              </div>
-            </ScrollReveal>
-          </div>
-        </div>
-      </section>
-
       {/* Booking Experience — solid field so the phone (screen has its own gradient) isn’t on the same mesh as “Why Ativo” */}
       <section className="bg-[#F1EEE7] py-20 lg:py-24">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
@@ -482,7 +413,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Quote band with video backdrop */}
+      {/* Quote band */}
       <section className="relative overflow-hidden py-20 lg:py-24">
         <video
           className="pointer-events-none absolute inset-0 h-full w-full object-cover"
@@ -490,11 +421,12 @@ export default function Home() {
           muted
           loop
           playsInline
+          preload="metadata"
           aria-hidden
         >
           <source src="/insight-living-testimonial-bg.MOV" type="video/quicktime" />
         </video>
-        <div className="pointer-events-none absolute inset-0 bg-[#F1EEE7]/86" aria-hidden />
+        <div className="pointer-events-none absolute inset-0 bg-gradient-to-b from-[#B9D4CF]/72 via-[#D1DFDA]/74 to-[#E6E1D3]/78" aria-hidden />
 
         <div className="relative z-10 mx-auto max-w-5xl px-6 text-center lg:px-8">
           <ScrollReveal>
@@ -542,8 +474,8 @@ export default function Home() {
                 <article
                   className={`relative h-full rounded-2xl border p-7 ${
                     card.featured
-                      ? 'border-[#A6C7B2] bg-[#6F916F] text-white'
-                      : 'border-white/10 bg-white/6 text-white'
+                      ? 'border-[#B9D4CF]/55 bg-[#2F6E6B] text-white'
+                      : 'border-[#2F6E6B]/18 bg-[#0E3B3A]/45 text-white'
                   }`}
                 >
                   {card.featured ? (
@@ -580,7 +512,7 @@ export default function Home() {
       <section className="bg-white py-20 lg:py-28">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <ScrollReveal>
-            <div className="text-center mb-16">
+            <div className="text-center mb-6">
               <p className="text-xs tracking-[0.25em] uppercase text-[#0E3B3A] font-medium mb-4">
                 Our Neighbors
               </p>
@@ -597,11 +529,7 @@ export default function Home() {
             </div>
           </ScrollReveal>
 
-          <ScrollReveal>
-            <AreaServiceMap />
-          </ScrollReveal>
-
-          <ScrollReveal delay={300}>
+          <ScrollReveal delay={150}>
             <div className="text-center mt-10">
               <Link
                 href="/locations"
