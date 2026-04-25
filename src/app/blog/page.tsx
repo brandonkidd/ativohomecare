@@ -1,8 +1,10 @@
 import Link from 'next/link';
+import Image from 'next/image';
 import { createMetadata } from '@/lib/metadata';
-import { blogPosts } from '@/lib/blog';
+import { getBlogPosts } from '@/lib/blog';
 import ScrollReveal from '@/components/ScrollReveal';
 import CTASection from '@/components/CTASection';
+import { urlForImage } from '@/sanity/lib/image';
 
 export const metadata = createMetadata({
   title: 'Blog | Ativo Home Care',
@@ -11,7 +13,11 @@ export const metadata = createMetadata({
   path: '/blog',
 });
 
-export default function BlogPage() {
+export const revalidate = 300;
+
+export default async function BlogPage() {
+  const blogPosts = await getBlogPosts();
+
   return (
     <>
       <section className="bg-[#F1EEE7] pt-32 pb-16 lg:pt-36 lg:pb-20">
@@ -38,6 +44,15 @@ export default function BlogPage() {
             {blogPosts.map((post, i) => (
               <ScrollReveal key={post.slug} delay={i * 80}>
                 <article className="h-full rounded-2xl border border-[#E6E1D3] bg-[#F8F5EF] p-7">
+                  {post.mainImage?.asset ? (
+                    <Image
+                      src={urlForImage(post.mainImage).width(700).height(380).fit('crop').url()}
+                      alt={post.mainImage.alt || post.title}
+                      width={700}
+                      height={380}
+                      className="mb-6 h-44 w-full rounded-xl object-cover"
+                    />
+                  ) : null}
                   <p className="text-xs font-medium uppercase tracking-[0.22em] text-[#2F6E6B]">
                     {post.category}
                   </p>

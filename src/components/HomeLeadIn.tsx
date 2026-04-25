@@ -50,7 +50,8 @@ export default function HomeLeadIn() {
             <em>
               &ldquo;The best senior care begins at home, before a crisis, before a facility, before a
               family reaches a breaking point. That is why we built Ativo Home Care. Families were
-              already trusting us with the next chapter. We wanted to be there for this one too.&rdquo;
+              already placing their trust in us for what comes next. We knew we could do more, and
+              sooner.&rdquo;
             </em>
           </p>
           <footer

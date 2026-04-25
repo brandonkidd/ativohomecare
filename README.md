@@ -1,36 +1,56 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Ativo Home Care Site
 
-## Getting Started
+This is a Next.js app with Sanity CMS powering blog content.
 
-First, run the development server:
+## Local Development
+
+1. Install dependencies:
+
+```bash
+npm install
+```
+
+2. Create `.env.local` from `.env.example` and fill in Sanity values.
+
+3. Start the app:
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+The website runs at [http://localhost:3001](http://localhost:3001).
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Sanity Setup
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+1. Create a Sanity project (or use an existing one).
+2. Add the following environment variables to `.env.local`:
 
-## Learn More
+```bash
+NEXT_PUBLIC_SANITY_PROJECT_ID=
+NEXT_PUBLIC_SANITY_DATASET=production
+NEXT_PUBLIC_SANITY_API_VERSION=2025-01-01
+NEXT_PUBLIC_SANITY_STUDIO_URL=/studio
+```
 
-To learn more about Next.js, take a look at the following resources:
+3. Open Studio in the app at [http://localhost:3001/studio](http://localhost:3001/studio).
+4. Create and publish a `Blog Post`.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Blog Architecture
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+- Blog index route: `src/app/blog/page.tsx`
+- Blog detail route: `src/app/blog/[slug]/page.tsx`
+- Content fetch layer: `src/lib/blog.ts`
+- Sanity schema: `src/sanity/schemaTypes/postType.ts`
 
-## Deploy on Vercel
+The app includes a fallback to local hardcoded posts if Sanity environment variables are missing, so the site still renders during setup.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## SEO and LLM Retrieval
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+The Sanity `Blog Post` schema supports:
+
+- Per-post title, slug, excerpt, category, publish date, and read time
+- Dedicated SEO meta description field
+- Rich body content (headings, lists, images, links)
+- FAQ entries rendered as `FAQPage` JSON-LD on the article page
+
+This structure improves indexability for both search engines and LLM-based retrieval systems.

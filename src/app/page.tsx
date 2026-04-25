@@ -9,7 +9,7 @@ import CTASection from '@/components/CTASection';
 import ScrollReveal from '@/components/ScrollReveal';
 import HomeFAQList, { type HomeFaqItem } from '@/components/HomeFAQList';
 import { services } from '@/lib/services';
-import { blogPosts } from '@/lib/blog';
+import { getBlogPosts } from '@/lib/blog';
 
 const homeFaqs: HomeFaqItem[] = [
   {
@@ -136,9 +136,9 @@ const careCostCards = [
   },
 ];
 
-const featuredResources = blogPosts.slice(0, 3);
+export default async function Home() {
+  const featuredResources = (await getBlogPosts()).slice(0, 3);
 
-export default function Home() {
   return (
     <>
       {/* Hero */}
@@ -259,6 +259,66 @@ export default function Home() {
       </ScrollReveal>
 
       {/* Cost & clarity band — archived copy: @/lib/archivedHomeCostHurdleCopy */}
+
+      {/* Cost comparison */}
+      <section className="bg-[#0E1B1B] py-20 lg:py-24">
+        <div className="mx-auto max-w-7xl px-6 lg:px-8">
+          <ScrollReveal>
+            <p className="mb-4 text-xs font-medium uppercase tracking-[0.25em] text-[#B9D4CF]">
+              The cost of care in Arizona
+            </p>
+            <h2
+              className="max-w-5xl text-4xl font-medium leading-[1.1] text-white sm:text-5xl"
+              style={{ fontFamily: 'var(--font-serif)' }}
+            >
+              In-Home Care Costs a Fraction of the Alternative
+            </h2>
+            <p className="mt-5 max-w-4xl text-lg leading-relaxed text-white/78">
+              Most families assume in-home care is out of reach. The reality: part-time home care in
+              Arizona costs significantly less than a nursing home or assisted living facility, and
+              your loved one gets to stay where they are most comfortable.
+            </p>
+          </ScrollReveal>
+
+          <div className="mt-12 grid grid-cols-1 gap-5 lg:grid-cols-3">
+            {careCostCards.map((card, i) => (
+              <ScrollReveal key={card.label} delay={i * 70}>
+                <article
+                  className={`relative h-full rounded-2xl border p-7 ${
+                    card.featured
+                      ? 'border-[#B9D4CF]/55 bg-[#2F6E6B] text-white'
+                      : 'border-[#2F6E6B]/18 bg-[#0E3B3A]/45 text-white'
+                  }`}
+                >
+                  {card.featured ? (
+                    <span className="absolute -top-3 right-5 rounded-full border border-[#D9CC8B] bg-[#D9CC8B] px-3 py-1 text-[0.62rem] font-semibold uppercase tracking-[0.22em] text-[#0E1B1B]">
+                      Ativo
+                    </span>
+                  ) : null}
+
+                  <p className="text-xs font-medium uppercase tracking-[0.22em] text-white/80">
+                    {card.label}
+                  </p>
+                  <p className="mt-5 text-5xl font-medium leading-none" style={{ fontFamily: 'var(--font-serif)' }}>
+                    {card.price}
+                  </p>
+                  <p className="mt-2 text-sm text-white/80">{card.context}</p>
+                  <p className="mt-6 text-sm leading-relaxed text-white/78">{card.detail}</p>
+                </article>
+              </ScrollReveal>
+            ))}
+          </div>
+
+          <ScrollReveal delay={180}>
+            <p className="mx-auto mt-10 max-w-5xl text-center text-xs leading-relaxed text-white/55">
+              Nursing home and assisted living costs based on 2024 Genworth/CareScout Cost of Care
+              Survey, Arizona medians. In-home care estimate based on $33/hour Arizona rate at 20
+              hours per week. Actual rates vary by service level, location, and hours. Contact Ativo
+              for a personalized quote.
+            </p>
+          </ScrollReveal>
+        </div>
+      </section>
 
       {/* What to expect (quick proof points) */}
       <section
@@ -500,66 +560,6 @@ export default function Home() {
       </section>
 
       <TestimonialCarousel />
-
-      {/* Cost comparison */}
-      <section className="bg-[#0E1B1B] py-20 lg:py-24">
-        <div className="mx-auto max-w-7xl px-6 lg:px-8">
-          <ScrollReveal>
-            <p className="mb-4 text-xs font-medium uppercase tracking-[0.25em] text-[#B9D4CF]">
-              The cost of care in Arizona
-            </p>
-            <h2
-              className="max-w-5xl text-4xl font-medium leading-[1.1] text-white sm:text-5xl"
-              style={{ fontFamily: 'var(--font-serif)' }}
-            >
-              In-Home Care Costs a Fraction of the Alternative
-            </h2>
-            <p className="mt-5 max-w-4xl text-lg leading-relaxed text-white/78">
-              Most families assume in-home care is out of reach. The reality: part-time home care in
-              Arizona costs significantly less than a nursing home or assisted living facility, and
-              your loved one gets to stay where they are most comfortable.
-            </p>
-          </ScrollReveal>
-
-          <div className="mt-12 grid grid-cols-1 gap-5 lg:grid-cols-3">
-            {careCostCards.map((card, i) => (
-              <ScrollReveal key={card.label} delay={i * 70}>
-                <article
-                  className={`relative h-full rounded-2xl border p-7 ${
-                    card.featured
-                      ? 'border-[#B9D4CF]/55 bg-[#2F6E6B] text-white'
-                      : 'border-[#2F6E6B]/18 bg-[#0E3B3A]/45 text-white'
-                  }`}
-                >
-                  {card.featured ? (
-                    <span className="absolute -top-3 right-5 rounded-full border border-[#D9CC8B] bg-[#D9CC8B] px-3 py-1 text-[0.62rem] font-semibold uppercase tracking-[0.22em] text-[#0E1B1B]">
-                      Ativo
-                    </span>
-                  ) : null}
-
-                  <p className="text-xs font-medium uppercase tracking-[0.22em] text-white/80">
-                    {card.label}
-                  </p>
-                  <p className="mt-5 text-5xl font-medium leading-none" style={{ fontFamily: 'var(--font-serif)' }}>
-                    {card.price}
-                  </p>
-                  <p className="mt-2 text-sm text-white/80">{card.context}</p>
-                  <p className="mt-6 text-sm leading-relaxed text-white/78">{card.detail}</p>
-                </article>
-              </ScrollReveal>
-            ))}
-          </div>
-
-          <ScrollReveal delay={180}>
-            <p className="mx-auto mt-10 max-w-5xl text-center text-xs leading-relaxed text-white/55">
-              Nursing home and assisted living costs based on 2024 Genworth/CareScout Cost of Care
-              Survey, Arizona medians. In-home care estimate based on $33/hour Arizona rate at 20
-              hours per week. Actual rates vary by service level, location, and hours. Contact Ativo
-              for a personalized quote.
-            </p>
-          </ScrollReveal>
-        </div>
-      </section>
 
       {/* Resources */}
       <section className="bg-white py-20 lg:py-24">

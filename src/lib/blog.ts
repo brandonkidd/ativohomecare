@@ -1,4 +1,14 @@
-export type BlogPost = {
+import { postBySlugQuery, postListQuery, postSlugsQuery } from '@/sanity/lib/queries';
+import { sanityFetch } from '@/sanity/lib/client';
+import type { SanityPost } from '@/sanity/lib/types';
+import type { PortableTextBlock } from '@portabletext/types';
+
+export type BlogFaqItem = {
+  question: string;
+  answer: string;
+};
+
+export type BlogPostCard = {
   slug: string;
   title: string;
   excerpt: string;
@@ -6,10 +16,22 @@ export type BlogPost = {
   readTime: string;
   publishedAt: string;
   seoDescription: string;
-  content: string[];
+  mainImage?: {
+    alt?: string;
+    asset?: {
+      _ref?: string;
+      _type?: string;
+    };
+  };
 };
 
-export const blogPosts: BlogPost[] = [
+export type BlogPost = BlogPostCard & {
+  body?: PortableTextBlock[];
+  content?: string[];
+  faq?: BlogFaqItem[];
+};
+
+const legacyBlogPosts: BlogPost[] = [
   {
     slug: 'signs-a-parent-needs-home-care',
     title: '7 Signs a Parent May Need Home Care',
@@ -63,6 +85,45 @@ export const blogPosts: BlogPost[] = [
   },
 ];
 
-export function getBlogPostBySlug(slug: string) {
-  return blogPosts.find((post) => post.slug === slug);
+function formatPublishedAt(value?: string) {
+  if (!value) return 'Unscheduled';
+  const date = new Date(value);
+  if (Number.isNaN(date.getTime())) return value;
+  return new Intl.DateTimeFormat('en-US', {
+    month: 'long',
+    year: 'numeric',
+  }).format(date);
+}
+
+function mapSanityPost(post: SanityPost): BlogPost {
+  return {
+    slug: post.slug,
+    title: post.title,
+    excerpt: post.excerpt || '',
+    category: post.category || 'Getting Started',
+    readTime: post.readTime || '5 min read',
+    publishedAt: formatPublishedAt(post.publishedAt),
+    seoDescription: post.seoDescription || post.excerpt || '',
+    mainImage: post.mainImage,
+    body: post.body,
+    faq: post.faq,
+  };
+}
+
+export async function getBlogPosts(): Promise<BlogPostCard[]> {
+  const posts = await sanityFetch<SanityPost[]>(postListQuery);
+  if (!posts?.length) return legacyBlogPosts;
+  return posts.map(mapSanityPost);
+}
+
+export async function getBlogPostBySlug(slug: string): Promise<BlogPost | undefined> {
+  const post = await sanityFetch<SanityPost>(postBySlugQuery, { slug });
+  if (!post) return legacyBlogPosts.find((entry) => entry.slug === slug);
+  return mapSanityPost(post);
+}
+
+export async function getBlogSlugs(): Promise<string[]> {
+  const slugs = await sanityFetch<string[]>(postSlugsQuery);
+  if (!slugs?.length) return legacyBlogPosts.map((post) => post.slug);
+  return slugs;
 }
