@@ -59,19 +59,19 @@ export default function HowItWorksPage() {
       {/* Hero */}
       <section className="pt-32 pb-20 bg-[#F1EEE7]">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
-          <div className="mx-auto max-w-5xl text-center">
-            <p className="text-xs sm:text-sm tracking-[0.35em] uppercase text-[#0E3B3A] font-medium mb-6">
+          <div className="mx-auto max-w-7xl text-center">
+            <p className="text-xs tracking-[0.25em] uppercase text-[#0E3B3A] font-medium mb-4">
               Getting Started
             </p>
             <h1
-              className="text-5xl sm:text-6xl lg:text-7xl font-medium text-[#0E1B1B] leading-[1.03]"
+              className="text-4xl sm:text-5xl lg:text-6xl font-medium text-[#0E1B1B] mb-6"
               style={{ fontFamily: 'var(--font-serif)' }}
             >
               From First Call to
               <br />
               <em>Ongoing Care</em>
             </h1>
-            <p className="mt-8 mx-auto max-w-3xl text-xl sm:text-2xl text-[#2F6E6B] leading-relaxed">
+            <p className="text-lg text-[#2F6E6B] max-w-2xl mx-auto leading-relaxed">
               Getting started with home care can feel overwhelming. We have
               simplified the process into five clear steps so you know exactly
               what to expect at every stage.

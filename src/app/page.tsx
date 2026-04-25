@@ -78,12 +78,122 @@ const benefitBand = [
   },
 ];
 
+const marketCards = [
+  {
+    name: 'Prescott Valley',
+    cities: 'Prescott Valley, Prescott, Chino Valley, Dewey-Humboldt',
+  },
+  {
+    name: 'Buckeye',
+    cities: 'Buckeye, Goodyear, Litchfield Park, Avondale, Surprise',
+  },
+  {
+    name: 'Yuma',
+    cities: 'Yuma, Fortuna Foothills, San Luis, Somerton',
+  },
+  {
+    name: 'Lake Havasu City',
+    cities: 'Lake Havasu City, Bullhead City, Fort Mohave, Kingman',
+  },
+];
+
+const careCostCards = [
+  {
+    label: 'Nursing Home',
+    price: '$6,540',
+    context: 'per month (Arizona median)',
+    detail: 'Semi-private room. Shared spaces. Clinical environment. Limited independence.',
+    featured: false,
+  },
+  {
+    label: 'Assisted Living',
+    price: '$5,500',
+    context: 'per month (Arizona median)',
+    detail: 'Private unit. Community setting. Shared caregivers across many residents.',
+    featured: false,
+  },
+  {
+    label: 'In-Home Care',
+    price: '$2,640',
+    context: 'per month (20 hrs/week)',
+    detail: "Your parent's own home. A dedicated caregiver. Their routine, their comfort, their life.",
+    featured: true,
+  },
+];
+
 export default function Home() {
   return (
     <>
       {/* Hero */}
       <Hero />
       <ProofBar />
+
+      {/* The Ativo Difference (top split section) */}
+      <section className="bg-[#F1EEE7] py-20 lg:py-24">
+        <div className="mx-auto max-w-7xl px-6 lg:px-8">
+          <div className="grid grid-cols-1 items-start gap-10 lg:grid-cols-12 lg:gap-12">
+            <ScrollReveal className="lg:col-span-6">
+              <p className="mb-4 text-xs font-medium uppercase tracking-[0.25em] text-[#0E3B3A]">
+                The Ativo Difference
+              </p>
+              <h2
+                className="text-4xl font-medium leading-[1.08] text-[#0E1B1B] sm:text-5xl"
+                style={{ fontFamily: 'var(--font-serif)' }}
+              >
+                The Only Home Care Agency Backed by a Senior Living Community in Your Neighborhood
+              </h2>
+
+              <div className="mt-7 space-y-5 text-lg leading-relaxed text-[#2F6E6B]">
+                <p>
+                  Every other home care agency in the West Valley is a standalone operation. They
+                  provide caregivers, and that is where their involvement ends.
+                </p>
+                <p>
+                  Ativo is different. We are part of a senior living network that includes
+                  communities in Prescott Valley, Buckeye, Yuma, and across the western United
+                  States. Our caregivers are trained to the same standards as the care teams inside
+                  our communities.
+                </p>
+                <p>
+                  That means your family gets more than a caregiver. You get the same systems our
+                  communities rely on: detailed visit tracking, medication and diet monitoring, and
+                  a family portal that keeps you informed with weekly updates. You are never guessing
+                  about how your parent is doing.
+                </p>
+                <p>
+                  And if the day comes when your loved one needs more than in-home support,
+                  everything transfers. Care notes, routines, preferences, relationships. Your family
+                  already knows the team that will care for them next.
+                </p>
+                <p>
+                  No starting over. No scrambling. One call, and we help you navigate the transition
+                  together.
+                </p>
+              </div>
+
+              <Link
+                href="/the-ativo-difference"
+                className="mt-8 inline-flex items-center gap-2 font-medium text-[#0E3B3A] transition-all hover:gap-3"
+              >
+                Learn More About Our Approach
+                <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" aria-hidden>
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
+                </svg>
+              </Link>
+            </ScrollReveal>
+
+            <ScrollReveal delay={120} className="lg:col-span-6">
+              <div className="surface-soft flex min-h-[22rem] items-center justify-center rounded-3xl border border-[#E6E1D3] p-8 text-center">
+                <p className="max-w-md text-base italic leading-relaxed text-[#2F6E6B]">
+                  [ FIELD: Image showing the connection between home care and community. Could be an
+                  Ativo community exterior, or a caregiver walking with a resident on an Ativo
+                  campus. ]
+                </p>
+              </div>
+            </ScrollReveal>
+          </div>
+        </div>
+      </section>
 
       {/* How: services grid */}
       <section
@@ -101,7 +211,7 @@ export default function Home() {
                 className="text-4xl sm:text-5xl lg:text-6xl font-medium text-[#0E1B1B]"
                 style={{ fontFamily: 'var(--font-serif)' }}
               >
-                Seven Ways We Help Families
+                Six Ways We Help Families
                 <br />
                 Stay <em>Together</em>
               </h2>
@@ -331,6 +441,138 @@ export default function Home() {
               </div>
             </ScrollReveal>
           </div>
+        </div>
+      </section>
+
+      {/* Communities We Serve */}
+      <section className="bg-[#F1EEE7] py-16 lg:py-20 border-y border-[#E6E1D3]">
+        <div className="mx-auto max-w-7xl px-6 lg:px-8">
+          <ScrollReveal>
+            <div className="mb-10 text-center lg:mb-12">
+              <p className="mb-4 text-xs font-medium uppercase tracking-[0.25em] text-[#0E3B3A]">
+                Serving Communities Across Arizona
+              </p>
+              <h2
+                className="text-4xl font-medium text-[#0E1B1B] sm:text-5xl"
+                style={{ fontFamily: 'var(--font-serif)' }}
+              >
+                Find Care Near You
+              </h2>
+              <p className="mx-auto mt-4 max-w-3xl text-[#2F6E6B]">
+                We serve four Arizona markets, each connected to an Ativo Senior Living community.
+              </p>
+            </div>
+          </ScrollReveal>
+
+          <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
+            {marketCards.map((market, i) => (
+              <ScrollReveal key={market.name} delay={i * 70}>
+                <div className="h-full rounded-2xl border border-[#E6E1D3] bg-[#ECE7DF] p-5 sm:p-6">
+                  <h3
+                    className="text-[1.7rem] font-medium leading-tight text-[#0E1B1B]"
+                    style={{ fontFamily: 'var(--font-serif)' }}
+                  >
+                    {market.name}
+                  </h3>
+                  <p className="mt-3 text-sm leading-relaxed text-[#2F6E6B]">{market.cities}</p>
+                </div>
+              </ScrollReveal>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Quote band with video backdrop */}
+      <section className="relative overflow-hidden py-20 lg:py-24">
+        <video
+          className="pointer-events-none absolute inset-0 h-full w-full object-cover"
+          autoPlay
+          muted
+          loop
+          playsInline
+          aria-hidden
+        >
+          <source src="/insight-living-testimonial-bg.MOV" type="video/quicktime" />
+        </video>
+        <div className="pointer-events-none absolute inset-0 bg-[#F1EEE7]/86" aria-hidden />
+
+        <div className="relative z-10 mx-auto max-w-5xl px-6 text-center lg:px-8">
+          <ScrollReveal>
+            <p className="mb-6 text-xs font-medium uppercase tracking-[0.25em] text-[#0E3B3A]">
+              What families say
+            </p>
+            <blockquote
+              className="mx-auto max-w-4xl text-[2rem] leading-[1.25] text-[#0E1B1B] sm:text-[2.2rem] lg:text-[2.45rem]"
+              style={{ fontFamily: 'var(--font-serif)' }}
+            >
+              <em>
+                &ldquo;The caregivers from Ativo have become like family to my mother. They know her
+                routines, her favorites, and they genuinely care. I finally stopped worrying at
+                2am.&rdquo;
+              </em>
+            </blockquote>
+            <p className="mt-8 text-sm font-medium text-[#2F6E6B] sm:text-base">Sarah M., Prescott Valley, AZ</p>
+          </ScrollReveal>
+        </div>
+      </section>
+
+      {/* Cost comparison */}
+      <section className="bg-[#0E1B1B] py-20 lg:py-24">
+        <div className="mx-auto max-w-7xl px-6 lg:px-8">
+          <ScrollReveal>
+            <p className="mb-4 text-xs font-medium uppercase tracking-[0.25em] text-[#B9D4CF]">
+              The cost of care in Arizona
+            </p>
+            <h2
+              className="max-w-5xl text-4xl font-medium leading-[1.1] text-white sm:text-5xl"
+              style={{ fontFamily: 'var(--font-serif)' }}
+            >
+              In-Home Care Costs a Fraction of the Alternative
+            </h2>
+            <p className="mt-5 max-w-4xl text-lg leading-relaxed text-white/78">
+              Most families assume in-home care is out of reach. The reality: part-time home care in
+              Arizona costs significantly less than a nursing home or assisted living facility, and
+              your loved one gets to stay where they are most comfortable.
+            </p>
+          </ScrollReveal>
+
+          <div className="mt-12 grid grid-cols-1 gap-5 lg:grid-cols-3">
+            {careCostCards.map((card, i) => (
+              <ScrollReveal key={card.label} delay={i * 70}>
+                <article
+                  className={`relative h-full rounded-2xl border p-7 ${
+                    card.featured
+                      ? 'border-[#A6C7B2] bg-[#6F916F] text-white'
+                      : 'border-white/10 bg-white/6 text-white'
+                  }`}
+                >
+                  {card.featured ? (
+                    <span className="absolute -top-3 right-5 rounded-full border border-[#D9CC8B] bg-[#D9CC8B] px-3 py-1 text-[0.62rem] font-semibold uppercase tracking-[0.22em] text-[#0E1B1B]">
+                      Ativo
+                    </span>
+                  ) : null}
+
+                  <p className="text-xs font-medium uppercase tracking-[0.22em] text-white/80">
+                    {card.label}
+                  </p>
+                  <p className="mt-5 text-5xl font-medium leading-none" style={{ fontFamily: 'var(--font-serif)' }}>
+                    {card.price}
+                  </p>
+                  <p className="mt-2 text-sm text-white/80">{card.context}</p>
+                  <p className="mt-6 text-sm leading-relaxed text-white/78">{card.detail}</p>
+                </article>
+              </ScrollReveal>
+            ))}
+          </div>
+
+          <ScrollReveal delay={180}>
+            <p className="mx-auto mt-10 max-w-5xl text-center text-xs leading-relaxed text-white/55">
+              Nursing home and assisted living costs based on 2024 Genworth/CareScout Cost of Care
+              Survey, Arizona medians. In-home care estimate based on $33/hour Arizona rate at 20
+              hours per week. Actual rates vary by service level, location, and hours. Contact Ativo
+              for a personalized quote.
+            </p>
+          </ScrollReveal>
         </div>
       </section>
 

@@ -10,7 +10,6 @@ const serviceOptions = [
   'Respite Care',
   'Transition Care',
   'Home Support Services',
-  'Transportation & Errands',
   'Not Sure Yet',
 ];
 

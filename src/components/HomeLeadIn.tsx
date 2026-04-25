@@ -1,25 +1,31 @@
+'use client';
+
+import { useRef } from 'react';
 import Image from 'next/image';
 
 /** Solid base under the ambient gradient (keeps type readable). */
 const LEAD_BG = '#2F6E6B';
 
-/**
- * Same three radial “site” layers as `body` in globals.css, plus the subtle
- * `body::before` speculars — no diagonal mesh PNG.
- */
-const LEAD_BACKDROP_LAYERS = [
-  'radial-gradient(55rem 38rem at 12% 8%, rgba(185, 212, 207, 0.5), rgba(185, 212, 207, 0) 65%)',
-  'radial-gradient(68rem 40rem at 76% 14%, rgba(47, 110, 107, 0.4), rgba(47, 110, 107, 0) 72%)',
-  'radial-gradient(72rem 44rem at 58% 68%, rgba(14, 59, 58, 0.3), rgba(14, 59, 58, 0) 74%)',
-  'radial-gradient(circle at 20% 18%, rgba(255, 255, 255, 0.2), transparent 36%)',
-  'radial-gradient(circle at 80% 72%, rgba(255, 255, 255, 0.1), transparent 35%)',
-].join(', ');
+const LEAD_VIDEO_SRC = '/videos/founder-bg.mp4';
+const LEAD_VIDEO_POSTER = '/ativo-founder-gradient.png';
+const LEAD_VIDEO_LOOP_SECONDS = 4;
 
 /**
  * Teal full-width band: large Playfair (serif) quote + sans attribution + small founder headshot.
  * Placed after services on the home page.
  */
 export default function HomeLeadIn() {
+  const videoRef = useRef<HTMLVideoElement | null>(null);
+
+  const handleTimeUpdate = () => {
+    const video = videoRef.current;
+    if (!video) return;
+    if (video.currentTime >= LEAD_VIDEO_LOOP_SECONDS) {
+      video.currentTime = 0;
+      void video.play();
+    }
+  };
+
   return (
     <section
       id="home-lead-in"
@@ -27,11 +33,22 @@ export default function HomeLeadIn() {
       style={{ backgroundColor: LEAD_BG }}
       aria-labelledby="home-lead-in-eyebrow"
     >
-      <div
-        className="pointer-events-none absolute inset-0"
-        style={{ backgroundImage: LEAD_BACKDROP_LAYERS }}
-        aria-hidden
-      />
+      <video
+        ref={videoRef}
+        className="pointer-events-none absolute inset-0 h-full w-full object-cover"
+        autoPlay
+        muted
+        playsInline
+        loop={false}
+        preload="metadata"
+        poster={LEAD_VIDEO_POSTER}
+        onTimeUpdate={handleTimeUpdate}
+        aria-hidden="true"
+      >
+        <source src={LEAD_VIDEO_SRC} type="video/mp4" />
+      </video>
+      <div className="pointer-events-none absolute inset-0 bg-black/52" aria-hidden />
+      <div className="pointer-events-none absolute inset-0 bg-gradient-to-b from-black/30 via-black/35 to-black/60" aria-hidden />
 
       <div className="relative z-10 px-5 py-16 sm:px-6 sm:py-20 lg:px-8 lg:py-24">
         <p

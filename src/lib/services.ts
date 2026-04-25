@@ -40,7 +40,7 @@ export const services: Service[] = [
       { question: 'What if my parent says they don\'t need help?', answer: 'This is the most common concern we hear. We position the caregiver as a helper or friend, not a nurse. Most resistant seniors warm up within the first visit or two once they realize this is about companionship, not being treated like a patient.' },
       { question: 'Do you match caregivers based on personality?', answer: 'Yes, always. We consider interests, communication style, energy level, and even cultural background. A great personality match is the single biggest predictor of a successful care relationship.' }
     ],
-    relatedSlugs: ['personal-care', 'home-support', 'transportation-errands']
+    relatedSlugs: ['personal-care', 'home-support', 'transition-care']
   },
   {
     slug: 'personal-care',
@@ -155,7 +155,7 @@ export const services: Service[] = [
   {
     slug: 'home-support',
     title: 'Home Support Services',
-    shortDescription: 'Household management that keeps the home clean, organized, and running smoothly. Because a well-maintained home is the foundation of independent living.',
+    shortDescription: 'Household management, errands, and transportation that keep daily life running smoothly. From grocery shopping and pharmacy pickups to doctor\'s appointments and social outings, we handle the logistics so your loved one stays independent and connected.',
     icon: 'sparkles',
     heroDescription: 'Comprehensive household support that keeps your loved one\'s home clean, organized, and comfortable.',
     whatsIncluded: [
@@ -177,34 +177,7 @@ export const services: Service[] = [
       { question: 'Do you handle pet care?', answer: 'Light pet care is included as part of home support. Feeding, water bowls, letting dogs out, and basic cleanup. We understand that pets are family, and helping care for them is part of caring for your loved one.' },
       { question: 'Can this be combined with other services?', answer: 'Absolutely, and it usually is. Most families pair home support with companion care or personal care for a complete package. Your caregiver handles both the household and the personal connection in one visit.' }
     ],
-    relatedSlugs: ['companion-care', 'transportation-errands', 'personal-care']
-  },
-  {
-    slug: 'transportation-errands',
-    title: 'Transportation & Errands',
-    shortDescription: 'Safe, reliable rides to appointments, pharmacies, grocery stores, and social events. Plus errand running so nothing falls through the cracks.',
-    icon: 'car',
-    heroDescription: 'Reliable transportation and errand services that keep your loved one connected, supplied, and on schedule.',
-    whatsIncluded: [
-      'Giving up the car keys is one of the hardest transitions in aging. It is not just about driving. It is about independence, spontaneity, and connection to the world. Our transportation service restores that freedom with a trusted caregiver who drives, accompanies, and assists.',
-      'Medical transportation covers doctor appointments, specialist visits, lab work, physical therapy, and pharmacy stops. Your caregiver drives, helps with check-in, takes notes during the appointment if requested, and ensures prescriptions are picked up on the way home.',
-      'Social and personal transportation keeps life full. Grocery shopping, hair appointments, lunch with friends, church services, community events, and family gatherings. We drive to all of it. No ride-share strangers, no rigid shuttle schedules.',
-      'Errand running handles the logistics your loved one can no longer manage. Pharmacy pickups, banking, post office, dry cleaning, returns, and any other task that requires leaving the house. The caregiver can run errands independently or bring your loved one along, whatever they prefer.'
-    ],
-    whoIsFor: [
-      'Seniors who have stopped driving or should stop driving and need reliable transportation',
-      'Families tired of juggling their parent\'s appointment schedule with their own work and family obligations',
-      'Seniors in 55+ communities who want to get off the property more often for shopping, dining, and socializing',
-      'Individuals with mobility limitations who need door-to-door assistance, not just a ride'
-    ],
-    schedulingInfo: 'Transportation can be booked as standalone visits or bundled into companion or personal care visits. Standalone transport visits have a 2-hour minimum. Most families find that combining transportation with a longer companion visit is the most cost-effective approach.',
-    faqs: [
-      { question: 'Do caregivers use their own car or the client\'s?', answer: 'Either. Caregivers can drive the client\'s vehicle if preferred, or use their own. All caregivers who provide transportation maintain valid insurance and clean driving records. Mileage for errands and appointments is included in the service, no extra per-mile charges.' },
-      { question: 'Can the caregiver come into the doctor\'s office?', answer: 'Yes, and we encourage it. Your caregiver can sit in during appointments to take notes, ask questions the family has submitted in advance, and relay information to you afterward. This is especially valuable for seniors with memory concerns who may not accurately recall what the doctor said.' },
-      { question: 'What if appointments run long?', answer: 'Your caregiver waits. There is no meter running and no ride-share surge pricing. If the appointment takes an extra hour, the caregiver is right there in the waiting room, ready to help when it is over. You are billed for actual time, and we understand that medical appointments are unpredictable.' },
-      { question: 'Can errands be run without the client present?', answer: 'Absolutely. If your loved one prefers to stay home while the caregiver picks up groceries, prescriptions, or dry cleaning, that works perfectly. The caregiver can also run errands during a companion visit while the client rests.' }
-    ],
-    relatedSlugs: ['companion-care', 'home-support', 'personal-care']
+    relatedSlugs: ['companion-care', 'transition-care', 'personal-care']
   }
 ];
 

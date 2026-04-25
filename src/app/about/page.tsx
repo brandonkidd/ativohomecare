@@ -57,17 +57,17 @@ export default function AboutPage() {
       {/* Hero */}
       <section className="pt-32 pb-20 bg-[#F1EEE7]">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
-          <div className="mx-auto max-w-5xl text-center">
-            <p className="text-xs sm:text-sm tracking-[0.35em] uppercase text-[#0E3B3A] font-medium mb-6">
+          <div className="mx-auto max-w-7xl text-center">
+            <p className="text-xs tracking-[0.25em] uppercase text-[#0E3B3A] font-medium mb-4">
               About Ativo
             </p>
             <h1
-              className="text-5xl sm:text-6xl lg:text-7xl font-medium text-[#0E1B1B] leading-[1.03]"
+              className="text-4xl sm:text-5xl lg:text-6xl font-medium text-[#0E1B1B] mb-6"
               style={{ fontFamily: 'var(--font-serif)' }}
             >
               Care That Feels Like <em>Family</em>
             </h1>
-            <p className="mt-8 mx-auto max-w-3xl text-xl sm:text-2xl text-[#2F6E6B] leading-relaxed">
+            <p className="text-lg text-[#2F6E6B] max-w-2xl mx-auto leading-relaxed">
               Ativo Home Care was founded on a simple observation: most home
               care agencies treat seniors like patients. We treat them like
               people. The difference shows up in everything we do, from the way

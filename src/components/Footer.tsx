@@ -11,7 +11,6 @@ const footerSections = [
       { label: 'Respite Care', href: '/services/respite-care' },
       { label: 'Transition Care', href: '/services/transition-care' },
       { label: 'Home Support', href: '/services/home-support' },
-      { label: 'Transportation', href: '/services/transportation-errands' },
     ],
   },
   {

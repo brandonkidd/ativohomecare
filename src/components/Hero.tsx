@@ -39,26 +39,29 @@ export default function Hero() {
                   />
                 </svg>
               </span>
-              <span className="text-white/90 text-sm font-medium tracking-wide">
-                Home care that feels like family.
+              <span className="text-white/90 text-sm font-medium tracking-wide leading-tight">
+                Senior Home Care in Buckeye, Goodyear,
+                <br />
+                Surprise, and the West Valley
               </span>
             </div>
 
             {/* Visual headline */}
             <h2
               data-home-care-anchor
-              className="text-6xl sm:text-7xl lg:text-8xl text-white font-medium leading-[1.04] mb-5 animate-fade-in-up animation-delay-100"
+              className="text-5xl sm:text-6xl lg:text-7xl text-white font-medium leading-[1.04] mb-5 animate-fade-in-up animation-delay-100"
               style={{ fontFamily: 'var(--font-serif)' }}
             >
-              <span className="not-italic">Care, Comfort,</span>
+              <span className="not-italic">Your Parent Deserves to Stay Home.</span>
               <br />
-              <em>Connection.</em>
+              <em className="text-[#B9D4CF]">We Make It Safe.</em>
             </h2>
 
             {/* Subheadline */}
-            <p className="text-white/85 text-lg sm:text-xl max-w-xl mb-8 leading-relaxed animate-fade-in-up animation-delay-200">
-              Your parent wants to stay home. You want your parent to be safe
-              - We make both possible.
+            <p className="text-white/85 text-base sm:text-lg max-w-xl mb-8 leading-relaxed animate-fade-in-up animation-delay-200">
+              Ativo Home Care provides professional, private-pay companion and personal care services
+              across Arizona. Backed by the same team behind Ativo Senior Living communities, so when
+              needs change, your family already has a partner for the next step.
             </p>
 
             {/* CTA — pill with dark square arrow */}
@@ -67,7 +70,7 @@ export default function Hero() {
                 href="/contact"
                 className="group inline-flex w-full sm:w-auto items-center justify-between sm:justify-start gap-3 sm:gap-4 rounded-full bg-white pl-5 sm:pl-6 pr-2 py-2 text-[#0E1B1B] font-medium text-[1.02rem] sm:text-base shadow-xl shadow-black/20 hover:bg-[#2F6E6B] hover:text-white active:bg-[#2F6E6B] active:text-white transition-all"
               >
-                <span>Schedule a Call</span>
+                <span>Schedule a Free Consultation</span>
                 <span className="flex h-11 w-11 items-center justify-center rounded-full bg-[#0E3B3A] text-white transition-transform group-hover:translate-x-0.5 group-hover:bg-white group-hover:text-[#0E1B1B] group-active:bg-white group-active:text-[#0E1B1B]">
                   <svg
                     className="w-4 h-4"
@@ -88,17 +91,44 @@ export default function Hero() {
                 href="tel:+17143074911"
                 className="text-white/80 hover:text-white text-[1.02rem] sm:text-base transition-colors"
               >
-                Or call 714-307-4911 →
+                Call 714-307-4911 →
               </a>
             </div>
           </div>
         </div>
       </div>
 
-      {/* Primary SEO headline */}
-      <h1 className="absolute bottom-12 sm:bottom-14 left-1/2 -translate-x-1/2 z-10 w-full px-5 text-center text-white/95 text-base sm:text-lg lg:text-xl font-medium animate-fade-in-up">
-        Senior Home Care in Buckeye, Goodyear, Surprise, and the West Valley
-      </h1>
+      {/* Trust points */}
+      <div className="pointer-events-none absolute inset-x-0 bottom-14 z-10 px-5 sm:bottom-16 sm:px-6 lg:px-12">
+        <div className="mx-auto flex max-w-6xl flex-wrap items-center justify-center gap-3 sm:gap-4">
+          {[
+            'Private Pay, No Insurance Hassle',
+            'Background-Checked Caregivers',
+            'No Long-Term Contracts',
+            'Connected to Ativo Senior Living',
+          ].map((item) => (
+            <span
+              key={item}
+              className="inline-flex items-center gap-2 px-1 py-1 text-xs font-medium text-white/95 sm:text-sm"
+            >
+              <span className="flex h-6 w-6 items-center justify-center rounded-full bg-white/15 border border-white/20">
+                <svg
+                  className="h-3.5 w-3.5 text-white"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  strokeWidth={2}
+                  stroke="currentColor"
+                  aria-hidden
+                >
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 12.75 10.5 18l9-12" />
+                </svg>
+              </span>
+              {item}
+            </span>
+          ))}
+        </div>
+      </div>
+
     </section>
   );
 }
