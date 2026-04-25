@@ -9,7 +9,7 @@ export default function TestimonialCarousel() {
   const [active, setActive] = useState(0);
 
   return (
-    <section className="bg-[#F1EEE7] py-20 lg:py-28">
+    <section className="bg-gradient-to-b from-[#B9D4CF] via-[#D1DFDA] to-[#E6E1D3] py-20 lg:py-28">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <ScrollReveal>
           <div className="text-center mb-16">

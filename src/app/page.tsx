@@ -447,7 +447,7 @@ export default function Home() {
 
         <div className="relative z-10 mx-auto max-w-5xl px-6 text-center lg:px-8">
           <ScrollReveal>
-            <p className="mb-6 text-xs font-medium uppercase tracking-[0.25em] text-white/85">
+            <p className="mb-6 text-xs font-medium uppercase tracking-[0.25em] text-white/80">
               What families say
             </p>
             <blockquote
