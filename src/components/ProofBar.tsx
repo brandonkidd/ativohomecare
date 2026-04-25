@@ -4,9 +4,9 @@ import { useEffect, useRef, useState } from 'react';
 import Image from 'next/image';
 
 const headshots = [
-  { src: '/headshot-1.jpg', alt: 'Ativo caregiver headshot 1' },
-  { src: '/headshot-2.jpg', alt: 'Ativo caregiver headshot 2' },
-  { src: '/headshot-3.jpg', alt: 'Ativo caregiver headshot 3' },
+  { src: '/headshot-1.jpg', alt: 'Ativo caregiver headshot 1', objectPosition: 'center', zoom: 1.4, transformOrigin: 'center' },
+  { src: '/headshot-3-latest-v2.png', alt: 'Ativo caregiver headshot 3', objectPosition: '50% 58%', zoom: 1.9, transformOrigin: 'center' },
+  { src: '/headshot-2.jpg', alt: 'Ativo caregiver headshot 2', objectPosition: 'center', zoom: 1.4, transformOrigin: 'center' },
 ];
 
 export default function ProofBar() {
@@ -152,8 +152,13 @@ export default function ProofBar() {
                     alt={h.alt}
                     fill
                     sizes="140px"
-                  className="object-cover object-center scale-140"
-                />
+                    className="object-cover"
+                    style={{
+                      objectPosition: h.objectPosition,
+                      transform: `scale(${h.zoom})`,
+                      transformOrigin: h.transformOrigin,
+                    }}
+                  />
               </div>
             ))}
             </div>

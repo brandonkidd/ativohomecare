@@ -22,8 +22,8 @@ export const testimonials: Testimonial[] = [
     name: 'Michael T.',
     community: 'Victory at Verrado',
     rating: 5,
-    avatarSrc: '/headshot-3.jpg',
-    avatarObjectPosition: 'center',
+    avatarSrc: '/headshot-3-latest-v2.png',
+    avatarObjectPosition: '50% 58%',
   },
   {
     quote: "I was burning out trying to care for my husband with Alzheimer's on my own. Ativo gave me my Tuesdays and Thursdays back. I can grocery shop, see my doctor, or just sit in a quiet coffee shop for two hours. It sounds small, but it saved me. Truly.",
