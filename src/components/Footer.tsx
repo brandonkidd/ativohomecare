@@ -38,6 +38,7 @@ const footerSections = [
     title: 'Resources',
     links: [
       { label: 'FAQ', href: '/faq' },
+      { label: 'Blog', href: '/blog' },
       { label: 'Privacy Policy', href: '/privacy' },
       { label: 'Terms of Service', href: '/terms' },
     ],

@@ -9,6 +9,7 @@ import CTASection from '@/components/CTASection';
 import ScrollReveal from '@/components/ScrollReveal';
 import HomeFAQList, { type HomeFaqItem } from '@/components/HomeFAQList';
 import { services } from '@/lib/services';
+import { blogPosts } from '@/lib/blog';
 
 const homeFaqs: HomeFaqItem[] = [
   {
@@ -134,6 +135,8 @@ const careCostCards = [
     featured: true,
   },
 ];
+
+const featuredResources = blogPosts.slice(0, 3);
 
 export default function Home() {
   return (
@@ -391,6 +394,73 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Inline contact form */}
+      <section className="bg-[#0E3B3A] py-12 lg:py-14" aria-labelledby="home-inline-form-title">
+        <div className="mx-auto max-w-7xl px-6 lg:px-8">
+          <div className="grid grid-cols-1 items-end gap-6 lg:grid-cols-12 lg:gap-8">
+            <div className="lg:col-span-4">
+              <p className="mb-3 text-xs font-medium uppercase tracking-[0.24em] text-[#B9D4CF]">
+                Quick Contact
+              </p>
+              <h2
+                id="home-inline-form-title"
+                className="text-3xl font-medium leading-tight text-white sm:text-4xl"
+                style={{ fontFamily: 'var(--font-serif)' }}
+              >
+                Talk to a Care Advisor
+              </h2>
+              <p className="mt-3 text-sm leading-relaxed text-white/80">
+                Share a few details and our team will follow up quickly.
+              </p>
+            </div>
+
+            <form action="/contact" method="get" className="grid grid-cols-1 gap-3 sm:grid-cols-2 lg:col-span-8 lg:grid-cols-4">
+              <label className="sr-only" htmlFor="inline-name">
+                Full name
+              </label>
+              <input
+                id="inline-name"
+                name="name"
+                type="text"
+                placeholder="Full name"
+                className="h-12 w-full rounded-md border border-white/70 bg-white px-4 text-sm text-[#0E1B1B] placeholder:text-[#2F6E6B]/80 outline-none transition focus:border-white focus:ring-2 focus:ring-white/45"
+                required
+              />
+
+              <label className="sr-only" htmlFor="inline-phone">
+                Phone number
+              </label>
+              <input
+                id="inline-phone"
+                name="phone"
+                type="tel"
+                placeholder="Phone number"
+                className="h-12 w-full rounded-md border border-white/70 bg-white px-4 text-sm text-[#0E1B1B] placeholder:text-[#2F6E6B]/80 outline-none transition focus:border-white focus:ring-2 focus:ring-white/45"
+                required
+              />
+
+              <label className="sr-only" htmlFor="inline-email">
+                Email address
+              </label>
+              <input
+                id="inline-email"
+                name="email"
+                type="email"
+                placeholder="Email address"
+                className="h-12 w-full rounded-md border border-white/70 bg-white px-4 text-sm text-[#0E1B1B] placeholder:text-[#2F6E6B]/80 outline-none transition focus:border-white focus:ring-2 focus:ring-white/45"
+              />
+
+              <button
+                type="submit"
+                className="inline-flex h-12 items-center justify-center rounded-md border border-white bg-white px-6 text-sm font-semibold text-[#0E3B3A] transition-colors hover:bg-[#F1EEE7]"
+              >
+                Request a Call
+              </button>
+            </form>
+          </div>
+        </div>
+      </section>
+
       {/* Serving communities across Arizona */}
       <section className="bg-white py-16 lg:py-20 border-y border-[#E6E1D3]">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
@@ -429,41 +499,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Quote band */}
-      <section className="relative overflow-hidden py-20 lg:py-24">
-        <video
-          className="pointer-events-none absolute inset-0 h-full w-full object-cover"
-          autoPlay
-          muted
-          loop
-          playsInline
-          preload="metadata"
-          aria-hidden
-        >
-          <source src="/quote-bg-2.MOV?v=3" />
-          <source src="/quote-bg-1.MOV?v=3" />
-        </video>
-        <div className="pointer-events-none absolute inset-0 bg-black/72" aria-hidden />
-
-        <div className="relative z-10 mx-auto max-w-5xl px-6 text-center lg:px-8">
-          <ScrollReveal>
-            <p className="mb-6 text-xs font-medium uppercase tracking-[0.25em] text-white/80">
-              What families say
-            </p>
-            <blockquote
-              className="mx-auto max-w-4xl text-[2rem] leading-[1.25] text-white sm:text-[2.2rem] lg:text-[2.45rem]"
-              style={{ fontFamily: 'var(--font-serif)' }}
-            >
-              <em>
-                &ldquo;The caregivers from Ativo have become like family to my mother. They know her
-                routines, her favorites, and they genuinely care. I finally stopped worrying at
-                2am.&rdquo;
-              </em>
-            </blockquote>
-            <p className="mt-8 text-sm font-medium text-white/85 sm:text-base">Sarah M., Prescott Valley, AZ</p>
-          </ScrollReveal>
-        </div>
-      </section>
+      <TestimonialCarousel />
 
       {/* Cost comparison */}
       <section className="bg-[#0E1B1B] py-20 lg:py-24">
@@ -525,7 +561,73 @@ export default function Home() {
         </div>
       </section>
 
-      <TestimonialCarousel />
+      {/* Resources */}
+      <section className="bg-white py-20 lg:py-24">
+        <div className="mx-auto max-w-7xl px-6 lg:px-8">
+          <ScrollReveal>
+            <div className="mx-auto max-w-4xl text-center">
+              <p className="mb-4 text-xs font-medium uppercase tracking-[0.25em] text-[#0E3B3A]">
+                Resources for Families
+              </p>
+              <h2
+                className="text-4xl font-medium text-[#0E1B1B] sm:text-5xl"
+                style={{ fontFamily: 'var(--font-serif)' }}
+              >
+                Helpful Reads While You Explore <em>Options</em>
+              </h2>
+              <p className="mt-5 text-[#2F6E6B]">
+                If you are not ready to call yet, start here. These guides answer the questions most
+                families ask during early research.
+              </p>
+            </div>
+          </ScrollReveal>
+
+          <div className="mt-12 grid grid-cols-1 gap-6 lg:grid-cols-3">
+            {featuredResources.map((post, i) => (
+              <ScrollReveal key={post.slug} delay={i * 80}>
+                <article className="h-full rounded-2xl border border-[#E6E1D3] bg-[#F8F5EF] p-7">
+                  <p className="text-xs font-medium uppercase tracking-[0.22em] text-[#2F6E6B]">
+                    {post.category}
+                  </p>
+                  <h3
+                    className="mt-4 text-2xl font-medium leading-tight text-[#0E1B1B]"
+                    style={{ fontFamily: 'var(--font-serif)' }}
+                  >
+                    {post.title}
+                  </h3>
+                  <p className="mt-4 text-sm leading-relaxed text-[#2F6E6B]">{post.excerpt}</p>
+                  <p className="mt-5 text-xs text-[#2F6E6B]/80">
+                    {post.publishedAt} · {post.readTime}
+                  </p>
+                  <Link
+                    href={`/blog/${post.slug}`}
+                    className="mt-6 inline-flex items-center gap-2 text-sm font-semibold text-[#0E3B3A] transition-all hover:gap-3 hover:text-[#2F6E6B]"
+                  >
+                    Read article
+                    <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" aria-hidden>
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
+                    </svg>
+                  </Link>
+                </article>
+              </ScrollReveal>
+            ))}
+          </div>
+
+          <ScrollReveal delay={150}>
+            <div className="mt-10 text-center">
+              <Link
+                href="/blog"
+                className="inline-flex items-center gap-2 text-[#0E3B3A] font-semibold transition-all hover:gap-3 hover:text-[#2F6E6B]"
+              >
+                View all family resources
+                <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" aria-hidden>
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
+                </svg>
+              </Link>
+            </div>
+          </ScrollReveal>
+        </div>
+      </section>
 
       {/* FAQ */}
       <section id="faq" className="bg-[#F1EEE7] py-20 lg:py-28">
